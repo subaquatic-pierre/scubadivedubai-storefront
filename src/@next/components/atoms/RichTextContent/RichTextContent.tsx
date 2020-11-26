@@ -21,6 +21,7 @@ const buildString = (descriptionJson: string) => {
   return stringArr.join()
 }
 
+// Used as previous method to display draft js editor data
 // sanitize(draftToHtml(JSON.parse(descriptionJson))
 
 export const RichTextContent: React.FC<IProps> = ({ descriptionJson }) => (
