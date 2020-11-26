@@ -7,19 +7,17 @@ import React from "react";
 import { IProps } from "./types";
 
 interface Block {
-  key: string,
-  data: any,
-  text: string
+  key: string;
+  data: any;
+  text: string;
 }
 
 const buildString = (descriptionJson: string) => {
-  const { blocks } = JSON.parse(descriptionJson)
-  const stringArr: string[] = []
-  blocks.map((obj: Block) => 
-    stringArr.push(obj.text)
-    )
-  return stringArr.join()
-}
+  const { blocks } = JSON.parse(descriptionJson);
+  const stringArr: string[] = [];
+  blocks.map((obj: Block) => stringArr.push(obj.text));
+  return stringArr.join("");
+};
 
 // Used as previous method to display draft js editor data
 // sanitize(draftToHtml(JSON.parse(descriptionJson))
