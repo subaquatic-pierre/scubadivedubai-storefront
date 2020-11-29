@@ -1,7 +1,7 @@
 /* eslint-disable react/no-danger */
 
-// import { sanitize } from "dompurify";
-// import draftToHtml from "draftjs-to-html";
+import { sanitize } from "dompurify";
+import draftToHtml from "draftjs-to-html";
 import React from "react";
 
 import { IProps } from "./types";
@@ -20,14 +20,25 @@ const buildString = (descriptionJson: string) => {
 };
 
 // Used as previous method to display draft js editor data
-// sanitize(draftToHtml(JSON.parse(descriptionJson))
+// sanitize(draftToHtml(JSON.parse(descriptionJson)))
 
-export const RichTextContent: React.FC<IProps> = ({ descriptionJson }) => (
+// buildString(descriptionJson)
+
+export const RichTextContent: React.FC<IProps> = ({
+  pageType,
+  descriptionJson,
+}) => (
   <>
-    {descriptionJson && (
+    {descriptionJson && pageType === "article" ? (
       <div
         dangerouslySetInnerHTML={{
           __html: buildString(descriptionJson),
+        }}
+      />
+    ) : (
+      <div
+        dangerouslySetInnerHTML={{
+          __html: sanitize(draftToHtml(JSON.parse(descriptionJson))),
         }}
       />
     )}
