@@ -23,29 +23,21 @@ export const ProductDescription: React.FC<IProps> = ({
       <S.Tabs>
         <S.TabTitle
           active={activeTab === TABS.DESCRIPTION}
-          onMouseEnter={evt => {
-            evt.stopPropagation();
-            setActiveTab(TABS.DESCRIPTION);
-          }}
           onClick={evt => {
             evt.stopPropagation();
             setActiveTab(TABS.DESCRIPTION);
           }}
         >
-          <FormattedMessage defaultMessage="DESCRIPTION" />
+          <FormattedMessage defaultMessage="OVERVIEW" />
         </S.TabTitle>
         <S.TabTitle
           active={activeTab === TABS.ATTRIBUTES}
-          onMouseEnter={evt => {
-            evt.stopPropagation();
-            setActiveTab(TABS.ATTRIBUTES);
-          }}
           onClick={evt => {
             evt.stopPropagation();
             setActiveTab(TABS.ATTRIBUTES);
           }}
         >
-          <FormattedMessage defaultMessage="ATTRIBUTES" />
+          <FormattedMessage defaultMessage="SPECS" />
         </S.TabTitle>
       </S.Tabs>
       {activeTab === TABS.DESCRIPTION &&

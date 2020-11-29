@@ -1,4 +1,4 @@
 export interface IProps {
   descriptionJson: string;
-  pageType: string;
+  pageType?: string;
 }

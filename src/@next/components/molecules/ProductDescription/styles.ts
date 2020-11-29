@@ -1,6 +1,32 @@
 import { media, styled } from "@styles";
 
-export const Wrapper = styled.div``;
+export const Wrapper = styled.div`
+  h2 {
+    font-size: 1.8em;
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+  }
+
+  h2::after {
+    content: "";
+    border-bottom: 5px solid ${props => props.theme.colors.listBullet};
+    display: block;
+    margin-top: 0.8rem;
+    width: 20%;
+  }
+
+  li {
+    margin-bottom: 30px;
+    font-size: ${props => props.theme.typography.h4FontSize};
+  }
+
+  li::before {
+    content: "•";
+    margin-right: 20px;
+    color: ${props => props.theme.colors.listBullet};
+  }
+`;
 
 export const AttributeList = styled.ul`
   columns: 2;
