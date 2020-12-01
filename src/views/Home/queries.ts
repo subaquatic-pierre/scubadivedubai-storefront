@@ -16,7 +16,7 @@ export const homePageQuery = gql`
         name
       }
     }
-    categories(level: 1, first: 6) {
+    categories(level: 1, first: 20) {
       edges {
         node {
           id
