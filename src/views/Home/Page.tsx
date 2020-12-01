@@ -23,7 +23,9 @@ const Page: React.FC<{
   categories: ProductsList_categories;
   backgroundImage: ProductsList_shop_homepageCollection_backgroundImage;
   shop: ProductsList_shop;
-}> = ({ loading, categories, backgroundImage, shop }) => {
+}> = (data: any) => {
+  const { loading, categories, backgroundImage, shop, menu } = data;
+  console.info(data);
   const categoriesExist = () => {
     return categories && categories.edges && categories.edges.length > 0;
   };

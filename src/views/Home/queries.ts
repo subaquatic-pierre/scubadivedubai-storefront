@@ -5,6 +5,16 @@ import { ProductsList } from "./gqlTypes/ProductsList";
 
 export const homePageQuery = gql`
   query ProductsList {
+    menu(name: "collections") {
+      name
+      items {
+        url
+        name
+        collection {
+          slug
+        }
+      }
+    }
     shop {
       description
       name
