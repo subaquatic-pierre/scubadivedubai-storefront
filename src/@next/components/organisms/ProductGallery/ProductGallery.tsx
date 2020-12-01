@@ -104,7 +104,6 @@ export const ProductGallery: React.FC<IProps> = ({ images }: IProps) => {
                     <S.Thumbnail
                       ref={setIntersectionObserver(index, images.length)}
                       onClick={() => setImageIndex(index)}
-                      onMouseEnter={() => setImageIndex(index)}
                       activeThumbnail={Boolean(index === imageIndex)}
                     >
                       <CachedImage alt={image.alt} url={image.url} />

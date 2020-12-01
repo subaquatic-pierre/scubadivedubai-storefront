@@ -27,6 +27,9 @@ export const Thumbnail = styled.div<{ activeThumbnail: boolean }>`
 
   margin-top: 20px;
   margin-bottom: 20px;
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 export const Button = styled.div`
