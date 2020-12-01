@@ -49,12 +49,23 @@ export const ProductDescription: React.FC<IProps> = ({
       {activeTab === TABS.ATTRIBUTES && (
         <S.AttributeList>
           {attributes &&
-            attributes.map((attribute, index) => (
-              <li key={index}>
-                <S.AttributeName>{attribute.attribute.name}: </S.AttributeName>{" "}
-                {attribute.values.map(value => value.name).join(", ")}
-              </li>
-            ))}
+            attributes.map((attribute, index) => {
+              const attrVals = attribute.values.map(value => value.name);
+              if (attrVals.length !== 0) {
+                return (
+                  <li key={index}>
+                    <S.AttributeName>
+                      {attribute.attribute.name}:{" "}
+                    </S.AttributeName>{" "}
+                    <S.AttributeValue>
+                      <span>
+                        {attribute.values.map(value => value.name).join(", ")}
+                      </span>
+                    </S.AttributeValue>
+                  </li>
+                );
+              }
+            })}
         </S.AttributeList>
       )}
     </S.Wrapper>

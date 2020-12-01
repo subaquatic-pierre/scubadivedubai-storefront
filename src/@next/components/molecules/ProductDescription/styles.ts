@@ -16,9 +16,15 @@ export const Wrapper = styled.div`
     width: 20%;
   }
 
+  ul {
+    text-indent: -25px; /* key property */
+    margin-left: 25px; /* key property */
+  }
+
   li {
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     font-size: ${props => props.theme.typography.h4FontSize};
+    line-height: 1.5rem;
   }
 
   li::before {
@@ -28,21 +34,23 @@ export const Wrapper = styled.div`
   }
 `;
 
-export const AttributeList = styled.ul`
-  columns: 2;
-  column-width: 50%;
+export const AttributeValue = styled.span`
+  margin-left: auto;
+`;
 
-  ${media.largeScreen`
-    column-width: 100%;
-    columns: 1;
+export const AttributeList = styled.ul`
+  width: 70%;
+  ${media.mediumScreen`
+    width: 100%;
   `};
-  width: 100%;
   padding: 0;
   margin: 0;
 
   li {
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     font-size: ${props => props.theme.typography.h4FontSize};
+    display: flex;
+    justify-content: space-between;
   }
 
   li::before {
