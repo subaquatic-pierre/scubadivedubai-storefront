@@ -90,8 +90,28 @@ const MainMenu: React.FC<MainMenuProps> = ({ demoMode }) => {
 
               return (
                 <ul>
-                  <Media
-                    query={{ maxWidth: mediumScreen }}
+                  <li
+                    data-test="toggleSideMenuLink"
+                    className="main-menu__hamburger"
+                    onClick={() =>
+                      overlayContext.show(
+                        OverlayType.sideNav,
+                        OverlayTheme.left,
+                        { data: items }
+                      )
+                    }
+                  >
+                    <ReactSVG
+                      path={hamburgerImg}
+                      className="main-menu__hamburger--icon"
+                    />
+                    <ReactSVG
+                      path={hamburgerHoverImg}
+                      className="main-menu__hamburger--hover"
+                    />
+                  </li>
+                  {/* <Media
+                    query={{ minWidth: smallScreen }}
                     render={() => (
                       <li
                         data-test="toggleSideMenuLink"
@@ -116,7 +136,7 @@ const MainMenu: React.FC<MainMenuProps> = ({ demoMode }) => {
                     )}
                   />
                   <Media
-                    query={{ minWidth: mediumScreen }}
+                    query={{ maxWidth: smallScreen }}
                     render={() =>
                       items.map(item => {
                         const hasSubNavigation = !!item?.children?.length;
@@ -141,7 +161,7 @@ const MainMenu: React.FC<MainMenuProps> = ({ demoMode }) => {
                         );
                       })
                     }
-                  />
+                  /> */}
                   <Online>
                     <Media
                       query={{ maxWidth: smallScreen }}
