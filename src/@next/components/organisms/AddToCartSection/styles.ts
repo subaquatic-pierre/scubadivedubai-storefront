@@ -28,6 +28,13 @@ export const VariantPicker = styled.div`
     width: 50%;
     margin-bottom: 1rem;
   }
+  &:hover {
+    cursor: pointer;
+  }
+
+  input {
+    cursor: pointer;
+  }
 `;
 
 export const QuantityInput = styled.div`
