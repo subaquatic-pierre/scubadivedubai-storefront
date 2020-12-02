@@ -71,6 +71,23 @@ export interface ProductsList_categories {
   edges: ProductsList_categories_edges[];
 }
 
+
+export interface Featured_collections_edges_node {
+  __typename: "Collection"
+  id: string;
+  name: string;
+}
+
+export interface Featured_collections_edges {
+  __typename: "CollectionCountableEdge"
+  node: Featured_collections_edges_node;
+}
+
+export interface Featured_collections{
+  __typename:"CollectionCountableConnection"
+  edges: Featured_collections_edges[]
+}
+
 export interface ProductsList {
   /**
    * Return information about the shop.
@@ -80,4 +97,8 @@ export interface ProductsList {
    * List of the shop's categories.
    */
   categories: ProductsList_categories | null;
+  /**
+   * List of featured collections
+   */
+  collections: Featured_collections | null;
 }

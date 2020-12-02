@@ -6,12 +6,13 @@ import { FormattedMessage, useIntl } from "react-intl";
 import { Link } from "react-router-dom";
 
 import { Button, Loader, ProductsFeatured } from "../../components";
-import { generateCategoryUrl } from "../../core/utils";
+import { generateCategoryUrl, generateCollectionUrl } from "../../core/utils";
 
 import {
   ProductsList_categories,
   ProductsList_shop,
   ProductsList_shop_homepageCollection_backgroundImage,
+  Featured_collections,
 } from "./gqlTypes/ProductsList";
 
 import { structuredData } from "../../core/SEO/Homepage/structuredData";
@@ -23,9 +24,8 @@ const Page: React.FC<{
   categories: ProductsList_categories;
   backgroundImage: ProductsList_shop_homepageCollection_backgroundImage;
   shop: ProductsList_shop;
-}> = (data: any) => {
-  const { loading, categories, backgroundImage, shop, menu } = data;
-  console.info(data);
+  collections: Featured_collections;
+}> = ({ loading, categories, backgroundImage, shop, collections }) => {
   const categoriesExist = () => {
     return categories && categories.edges && categories.edges.length > 0;
   };
@@ -55,7 +55,7 @@ const Page: React.FC<{
           <div>
             <span className="home-page__hero__title">
               <h1>
-                <FormattedMessage defaultMessage="Up to 70% off sale" />
+                <FormattedMessage defaultMessage="Up to 30% off sale" />
               </h1>
             </span>
           </div>
@@ -66,10 +66,13 @@ const Page: React.FC<{
           ) : (
             categoriesExist() && (
               <Link
-                to={generateCategoryUrl(
-                  categories.edges[0].node.id,
-                  categories.edges[0].node.name
-                )}
+                to={
+                  collections &&
+                  generateCollectionUrl(
+                    collections.edges[0].node.id,
+                    collections.edges[0].node.name
+                  )
+                }
               >
                 <Button testingContext="homepageHeroActionButton">
                   <FormattedMessage defaultMessage="Shop sale" />
