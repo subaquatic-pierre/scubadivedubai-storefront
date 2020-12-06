@@ -39,9 +39,9 @@ export const AttributeValue = styled.span`
 `;
 
 export const AttributeList = styled.ul`
-  width: 70%;
+  max-width: 80%;
   ${media.mediumScreen`
-    width: 100%;
+    max-width: 95%;
   `};
   padding: 0;
   margin: 0;
