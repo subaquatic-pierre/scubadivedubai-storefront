@@ -14,19 +14,29 @@ import { MainMenu_shop_navigation_main_items } from "../MainMenu/gqlTypes/MainMe
 import { MainMenuSubItem } from "../MainMenu/gqlTypes/MainMenuSubItem";
 
 interface NavLinkProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
+  hasSubNavigation: boolean;
   item:
     | MainMenu_shop_navigation_main_items
     | MainMenuSubItem
     | SecondaryMenu_shop_navigation_secondary_items
     | SecondaryMenu_shop_navigation_secondary_items_children;
 }
-export const NavLink: React.FC<NavLinkProps> = ({ item, ...props }) => {
+export const NavLink: React.FC<NavLinkProps> = ({
+  item,
+  hasSubNavigation,
+  ...props
+}) => {
   const { name, url, category, collection, page } = item;
-  const link = (url: string) => (
-    <Link to={url} {...props}>
-      {name}
-    </Link>
-  );
+  const link = (url: string) => {
+    if (hasSubNavigation) {
+      return <span {...props}>{name}</span>;
+    }
+    return (
+      <Link to={url} {...props}>
+        {name}
+      </Link>
+    );
+  };
 
   if (url) {
     return (

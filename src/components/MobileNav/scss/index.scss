@@ -10,6 +10,15 @@
     display: grid;
     height: $item-height;
 
+    &:hover {
+      cursor: pointer;
+
+      svg {
+        transition: 0.3s;
+        color: $turquoise;
+      }
+    }
+
     &-link,
     &-back span {
       align-items: center;
