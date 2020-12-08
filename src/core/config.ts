@@ -47,10 +47,6 @@ export const STATIC_PAGES = [
     label: "Terms of Service",
     url: generatePageUrl("terms-of-service"),
   },
-  {
-    label: "Contact Us",
-    url: generatePageUrl("contact-us"),
-  },
 ];
 export const SOCIAL_MEDIA = [
   {

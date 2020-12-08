@@ -20,7 +20,8 @@ const Footer: React.FC = () => (
       </div>
       <div className="footer__section">
         <div className="footer__section-content">
-          <h4>ScubaDiveDubai.com</h4>
+          <h4 className="footer__section-header">Contact</h4>
+          <p>Scuba Dive Dubai</p>
           <p>PO Box 4156</p>
           <p>Dubai</p>
           <p>UAE</p>
