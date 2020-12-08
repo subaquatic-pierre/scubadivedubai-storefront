@@ -24,6 +24,14 @@ export const homePageQuery = gql`
           backgroundImage {
             url
           }
+          children(first: 20) {
+            edges {
+              node {
+                id
+                name
+              }
+            }
+          }
         }
       }
     }
