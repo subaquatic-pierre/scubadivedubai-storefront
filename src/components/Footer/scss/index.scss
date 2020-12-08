@@ -1,42 +1,54 @@
 @import "../../../globalStyles/scss/variables.scss";
 
 .footer {
-  &__favicons {
-    border-top: 1px solid $gray-light;
+  background-color: $gray-light;
+  padding: $spacer * 3 0 $spacer * 2;
+
+  .container {
     display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    div:not(:last-of-type) {
+      padding-right: $spacer * 3;
+    }
+  }
+
+  &__logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
   }
 
-  &-nav {
-    background-color: $gray-light;
-    padding: $spacer * 3 0 $spacer * 2;
+  &__favicons {
+    border-top: 1px solid $gray-light;
+    margin-bottom: $spacer;
+    display: flex;
+    justify-content: center;
+    max-width: 150px;
+  }
 
-    .container {
-      display: flex;
-      flex-wrap: wrap;
-
-      div:not(:last-of-type) {
-        padding-right: $spacer * 3;
-      }
+  &__section {
+    h4 {
+      font-weight: $bold-font-weight;
+      margin-bottom: $spacer;
+    }
+    &-header {
+      font-weight: $bold-font-weight;
+      margin-bottom: $spacer;
+      text-transform: uppercase;
     }
 
-    &__section {
-      &-header {
-        font-weight: $bold-font-weight;
+    &-content {
+      p {
         margin-bottom: $spacer;
-        text-transform: uppercase;
-      }
+        font-size: $small-font-size;
+        color: $gray-dark;
 
-      &-content {
-        p {
-          margin-bottom: $spacer;
-          font-size: $small-font-size;
-          color: $gray;
-
-          a {
-            text-decoration: none;
-            color: $gray;
-          }
+        a {
+          text-decoration: none;
+          color: $gray-dark;
         }
       }
     }
