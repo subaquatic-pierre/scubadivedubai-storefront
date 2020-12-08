@@ -79,7 +79,8 @@ class NavList extends React.PureComponent<NavListProps, NavListState> {
                 className="side-nav__menu-item-logo"
                 onClick={hideOverlay}
               >
-                <ReactSVG path={logoImg} />
+                <img src={logoImg} alt="" />
+                {/* <ReactSVG path={logoImg} /> */}
               </Link>
               <span className="side-nav__menu-item-close" onClick={hideOverlay}>
                 <span />

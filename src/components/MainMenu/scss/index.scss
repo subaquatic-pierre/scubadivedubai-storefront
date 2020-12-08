@@ -42,15 +42,16 @@
     }
   }
 
+  // Main Menu Logo
   &__center {
     align-self: center;
-
     svg {
       width: 4rem;
-
       @media (min-width: $small-screen) {
+        margin-top: 3.5rem;
         width: 6rem;
       }
+      margin-top: 2rem;
     }
   }
 

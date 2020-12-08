@@ -36,14 +36,6 @@ export const PROVIDERS = {
 
 export const STATIC_PAGES = [
   {
-    label: "About",
-    url: generatePageUrl("about"),
-  },
-  {
-    label: "Contact Us",
-    url: generatePageUrl("contact-us"),
-  },
-  {
     label: "Privacy Policy",
     url: generatePageUrl("privacy-policy"),
   },
@@ -54,6 +46,10 @@ export const STATIC_PAGES = [
   {
     label: "Terms of Service",
     url: generatePageUrl("terms-of-service"),
+  },
+  {
+    label: "Contact Us",
+    url: generatePageUrl("contact-us"),
   },
 ];
 export const SOCIAL_MEDIA = [
