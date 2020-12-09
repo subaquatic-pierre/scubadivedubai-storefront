@@ -6,6 +6,8 @@ import { Link } from "react-router-dom";
 
 import { generateCategoryUrl, generateSubCategoryUrl } from "../../core/utils";
 
+import { Breadcrumbs, extractBreadcrumbs } from "../../components";
+
 import {
   Category_category_backgroundImage,
   Category_category,
@@ -47,6 +49,7 @@ const Page: React.FC<{
       </div>
       <div className="home-page__categories">
         <div className="container">
+          <Breadcrumbs breadcrumbs={extractBreadcrumbs(category)} />
           {/* <h3>
               <FormattedMessage defaultMessage="Shop by category" />
             </h3> */}

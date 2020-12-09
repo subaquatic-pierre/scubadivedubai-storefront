@@ -22,6 +22,28 @@ export interface Category_category_children_backgroundImage {
   url: string;
 }
 
+export interface Category_category_ancestors_edges_node {
+  __typename: "Category";
+  /**
+   * The ID of the object.
+   */
+  id: string;
+  name: string;
+}
+
+export interface Category_category_ancestors_edges {
+  __typename: "CategoryCountableEdge";
+  /**
+   * The item at the end of the edge.
+   */
+  node: Category_category_ancestors_edges_node;
+}
+
+export interface Category_category_ancestors {
+  __typename: "CategoryCountableConnection";
+  edges: Category_category_ancestors_edges[];
+}
+
 export interface Category_category_children_edges_node {
   __typename: "Category";
   /**
@@ -67,6 +89,7 @@ export interface SubCategory {
    * Look up a category by ID or slug.
    */
   category: Category_category | null;
+  ancestors: Category_category_ancestors | null;
 }
 
 export interface SubCategoryVariables {
