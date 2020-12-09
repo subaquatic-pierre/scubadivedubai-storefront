@@ -6,7 +6,11 @@ import { FormattedMessage, useIntl } from "react-intl";
 import { Link } from "react-router-dom";
 
 import { Button, Loader, ProductsFeatured } from "../../components";
-import { generateCategoryUrl, generateCollectionUrl } from "../../core/utils";
+import {
+  generateCategoryUrl,
+  generateSubCategoryUrl,
+  generateCollectionUrl,
+} from "../../core/utils";
 
 import {
   ProductsList_categories,
@@ -30,7 +34,6 @@ const Page: React.FC<{
     return categories && categories.edges && categories.edges.length > 0;
   };
   const intl = useIntl();
-
   return (
     <>
       <script className="structured-data-list" type="application/ld+json">
@@ -95,7 +98,11 @@ const Page: React.FC<{
               {categories.edges.map(({ node: category }) => (
                 <div key={category.id}>
                   <Link
-                    to={generateCategoryUrl(category.id, category.name)}
+                    to={
+                      category.children.edges.length > 0
+                        ? generateSubCategoryUrl(category.id, category.name)
+                        : generateCategoryUrl(category.id, category.name)
+                    }
                     key={category.id}
                   >
                     <div

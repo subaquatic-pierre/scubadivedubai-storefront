@@ -6,6 +6,30 @@
 // GraphQL query operation: ProductsList
 // ====================================================
 
+// Categories Children
+
+export interface ProductsList_categories_edges_node_children_edges_node {
+  __typename: "Category";
+  /**
+   * The ID of the object.
+   */
+  id: string;
+  name: string;
+}
+
+export interface ProductsList_categories_edges_node_children_edges {
+  __typename: "CategoryCountableEdge";
+  /**
+   * The item at the end of the edge.
+   */
+  node: ProductsList_categories_edges_node_children_edges_node;
+}
+
+export interface ProductsList_categories_edges_node_children {
+  __typename: "CategoryCountableConnection";
+  edges: ProductsList_categories_edges_node_children_edges_node[];
+}
+
 export interface ProductsList_shop_homepageCollection_backgroundImage {
   __typename: "Image";
   /**
@@ -56,6 +80,7 @@ export interface ProductsList_categories_edges_node {
   id: string;
   name: string;
   backgroundImage: ProductsList_categories_edges_node_backgroundImage | null;
+  children: ProductsList_categories_edges_node_children;
 }
 
 export interface ProductsList_categories_edges {
@@ -70,7 +95,6 @@ export interface ProductsList_categories {
   __typename: "CategoryCountableConnection";
   edges: ProductsList_categories_edges[];
 }
-
 
 export interface Featured_collections_edges_node {
   __typename: "Collection"

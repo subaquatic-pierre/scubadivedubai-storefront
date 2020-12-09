@@ -8,6 +8,7 @@ import { OrderDetails } from "../../userAccount/views";
 import { Account, AccountConfirm } from "../../views/Account";
 import { ArticlePage } from "../../views/Article";
 import { CategoryPage } from "../../views/Category";
+import { SubCategoryPage } from "../../views/SubCategory";
 import { CollectionPage } from "../../views/Collection";
 import { HomePage } from "../../views/Home";
 import { ProductPage } from "../../views/Product";
@@ -20,6 +21,7 @@ export const Routes: React.FC = () => (
     <Route exact path={paths.baseUrl} component={HomePage} />
     <Route path={paths.searchUrl} component={SearchPage} />
     <Route path={paths.categoryUrl} component={CategoryPage} />
+    <Route path={paths.subCategoryUrl} component={SubCategoryPage} />
     <Route path={paths.collectionUrl} component={CollectionPage} />
     <Route path={paths.productUrl} component={ProductPage} />
     <Route path={paths.cartUrl} component={CartPage} />
