@@ -28,6 +28,7 @@ const PaymentGatewaysList: React.FC<IProps> = ({
   errors,
   onError,
 }: IProps) => {
+  console.info(paymentGateways);
   return (
     <S.Wrapper>
       {paymentGateways.map(({ id, name, config }, index) => {
@@ -113,7 +114,8 @@ const PaymentGatewaysList: React.FC<IProps> = ({
                     customLabel
                   >
                     <span data-test="checkoutPaymentGatewayStripeName">
-                      {name}
+                      {/* DEBUG_CHANGE: Be sure to change back to {name} instead of "Credit Card" */}
+                      Credit Card
                     </span>
                   </Radio>
                 </S.Tile>

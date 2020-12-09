@@ -5,6 +5,7 @@ import { generatePageUrl } from "./utils";
 export const BASE_URL = "/";
 export const PRODUCTS_PER_PAGE = 6;
 export const SUPPORT_EMAIL = "info@scubadivedubai.com";
+// DEBUG_CHANGE: Must change stripe credit card label
 export const PROVIDERS = {
   BRAINTREE: {
     label: "Braintree",
