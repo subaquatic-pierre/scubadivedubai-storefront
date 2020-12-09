@@ -18,6 +18,14 @@ export const subCategoryQuery = gql`
           node {
             id
             name
+            children(first: 30) {
+              edges {
+                node {
+                  name
+                  id
+                }
+              }
+            }
             backgroundImage {
               url
             }

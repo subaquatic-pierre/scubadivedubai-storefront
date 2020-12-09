@@ -30,6 +30,7 @@ export interface Category_category_children_edges_node {
   id: string;
   name: string;
   backgroundImage: Category_category_children_backgroundImage;
+  children: Category_category_children;
 }
 
 export interface Category_category_children_edges {

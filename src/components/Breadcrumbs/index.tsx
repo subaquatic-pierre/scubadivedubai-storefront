@@ -17,10 +17,32 @@ export interface Breadcrumb {
   link: string;
 }
 
+// if (category.children.edges.length > 0) {
+//   return {
+//     link: generateSubCategoryUrl(category.id, category.name),
+//     value: item.name,
+//   };
+// }
+// return {
+//   link: generateCategoryUrl(category.id, category.name),
+//   value: item.name,
+// };
+
+const hasChildren = (category: Category_category) => {
+  return category.children.edges.length > 0;
+};
+
+const buildUrlPrefix = (category: Category_category) => {
+  if (hasChildren) {
+    return `/sub-category`;
+  }
+  return `category`;
+};
+
 export const extractBreadcrumbs = (category: Category_category) => {
   const constructLink = item => ({
     link: [
-      `/category`,
+      buildUrlPrefix(item),
       `/${slugify(item.name)}`,
       `/${getDBIdFromGraphqlId(item.id, "Category")}/`,
     ].join(""),

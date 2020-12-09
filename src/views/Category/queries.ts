@@ -29,6 +29,14 @@ export const categoryProductsDataQuery = gql`
           }
         }
       }
+      children(first: 20) {
+        edges {
+          node {
+            id
+            name
+          }
+        }
+      }
     }
     attributes(
       filter: { inCategory: $id, filterableInStorefront: true }

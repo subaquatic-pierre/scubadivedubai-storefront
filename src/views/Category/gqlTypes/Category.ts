@@ -6,6 +6,30 @@
 // GraphQL query operation: Category
 // ====================================================
 
+// Categories Children
+
+export interface Category_category_edges_node_children_edges_node {
+  __typename: "Category";
+  /**
+   * The ID of the object.
+   */
+  id: string;
+  name: string;
+}
+
+export interface Category_category_edges_node_children_edges {
+  __typename: "CategoryCountableEdge";
+  /**
+   * The item at the end of the edge.
+   */
+  node: Category_category_edges_node_children_edges_node;
+}
+
+export interface Category_category_edges_node_children {
+  __typename: "CategoryCountableConnection";
+  edges: Category_category_edges_node_children_edges_node[];
+}
+
 export interface Category_category_backgroundImage {
   __typename: "Image";
   /**
@@ -50,6 +74,7 @@ export interface Category_category {
    * List of ancestors of the category.
    */
   ancestors: Category_category_ancestors | null;
+  children: Category_category_edges_node_children | null;
 }
 
 export interface Category_attributes_edges_node_values {

@@ -2,10 +2,9 @@ import "./scss/index.scss";
 
 import classNames from "classnames";
 import * as React from "react";
-import { FormattedMessage, useIntl } from "react-intl";
 import { Link } from "react-router-dom";
 
-import { generateCategoryUrl } from "../../core/utils";
+import { generateCategoryUrl, generateSubCategoryUrl } from "../../core/utils";
 
 import {
   Category_category_backgroundImage,
@@ -20,8 +19,7 @@ const Page: React.FC<{
   category: Category_category;
   backgroundImage: Category_category_backgroundImage;
 }> = ({ category, backgroundImage }) => {
-  // const intl = useIntl();
-  console.info(category);
+  console.info(category.children.edges);
   const header: string = category.name || "Sub Category";
   return (
     <>
@@ -56,7 +54,11 @@ const Page: React.FC<{
             {category.children.edges.map(({ node: category }) => (
               <div key={category.id}>
                 <Link
-                  to={generateCategoryUrl(category.id, category.name)}
+                  to={
+                    category.children.edges.length > 0
+                      ? generateSubCategoryUrl(category.id, category.name)
+                      : generateCategoryUrl(category.id, category.name)
+                  }
                   key={category.id}
                 >
                   <div
