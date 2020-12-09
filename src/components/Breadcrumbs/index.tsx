@@ -17,26 +17,26 @@ export interface Breadcrumb {
   link: string;
 }
 
-// if (category.children.edges.length > 0) {
-//   return {
-//     link: generateSubCategoryUrl(category.id, category.name),
-//     value: item.name,
-//   };
-// }
-// return {
-//   link: generateCategoryUrl(category.id, category.name),
-//   value: item.name,
+// const hasChildren = (category: Category_category) => {
+//   try {
+//     return category.ancestors.edges.length > 0;
+//   } catch (e) {}
 // };
 
-const hasChildren = (category: Category_category) => {
-  return category.children.edges.length > 0;
+const isSubCategory = item => {
+  console.log(item);
+
+  if (!item.seoDescription && item.children.edges.length > 0) {
+    return true;
+  }
+  return false;
 };
 
-const buildUrlPrefix = (category: Category_category) => {
-  if (hasChildren) {
+const buildUrlPrefix = item => {
+  if (isSubCategory(item)) {
     return `/sub-category`;
   }
-  return `category`;
+  return `/category`;
 };
 
 export const extractBreadcrumbs = (category: Category_category) => {

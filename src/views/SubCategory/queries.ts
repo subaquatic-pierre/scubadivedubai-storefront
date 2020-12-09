@@ -18,6 +18,14 @@ export const subCategoryQuery = gql`
           node {
             id
             name
+            children(first: 20) {
+              edges {
+                node {
+                  id
+                  name
+                }
+              }
+            }
           }
         }
       }

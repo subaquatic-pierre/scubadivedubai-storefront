@@ -2,6 +2,7 @@ import * as React from "react";
 
 import { NavLink } from "..";
 import { TypedSecondaryMenuQuery } from "./queries";
+import acceptedPayments from "../../images/acceptedPayments.png";
 
 import "./scss/index.scss";
 
@@ -21,6 +22,14 @@ class Nav extends React.PureComponent {
                     <NavLink item={subItem} />
                   </p>
                 ))}
+                <div className="footer__section-payments">
+                  <p>Accepted Payments</p>
+                  <img
+                    width="150px"
+                    alt="Accepted Payment options"
+                    src={acceptedPayments}
+                  />
+                </div>
               </div>
             </div>
           ));

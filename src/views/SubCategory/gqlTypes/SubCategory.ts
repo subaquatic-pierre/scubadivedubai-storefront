@@ -29,6 +29,7 @@ export interface Category_category_ancestors_edges_node {
    */
   id: string;
   name: string;
+  children: Category_category_ancestors_edges[];
 }
 
 export interface Category_category_ancestors_edges {

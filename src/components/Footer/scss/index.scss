@@ -61,5 +61,15 @@
         }
       }
     }
+
+    &-payments {
+      border-top: 2px solid $gray-dark;
+      padding-top: $spacer;
+      margin-top: $spacer;
+
+      p {
+        font-weight: $bold-font-weight;
+      }
+    }
   }
 }
