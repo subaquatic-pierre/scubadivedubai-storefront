@@ -20,9 +20,7 @@ providers.set("amex", amexImg);
 providers.set("jcb", jcbImg);
 providers.set("discover", discoverImg);
 
-export const CreditCardIcon: React.FC<IProps> = ({
-  creditCardProvider,
-}: IProps) => {
+const CreditCardIcon: React.FC<IProps> = ({ creditCardProvider }: IProps) => {
   return (
     <S.CreditCardIcon>
       {providers.has(creditCardProvider) && (
@@ -31,3 +29,5 @@ export const CreditCardIcon: React.FC<IProps> = ({
     </S.CreditCardIcon>
   );
 };
+
+export default CreditCardIcon;

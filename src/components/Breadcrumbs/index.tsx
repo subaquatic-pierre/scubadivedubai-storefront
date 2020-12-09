@@ -24,8 +24,6 @@ export interface Breadcrumb {
 // };
 
 const isSubCategory = item => {
-  console.log(item);
-
   if (!item.seoDescription && item.children.edges.length > 0) {
     return true;
   }

@@ -21,7 +21,6 @@ const Page: React.FC<{
   category: Category_category;
   backgroundImage: Category_category_backgroundImage;
 }> = ({ category, backgroundImage }) => {
-  console.info(category.children.edges);
   const header: string = category.name || "Sub Category";
   return (
     <>
