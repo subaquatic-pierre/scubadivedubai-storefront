@@ -1,4 +1,5 @@
-import React, { useContext, useEffect, useState } from "react";
+// import React, { useContext, useEffect, useState } from "react";
+import React, { useContext } from "react";
 import { FormattedMessage } from "react-intl";
 import { commonMessages } from "@temp/intl";
 import { useAuth, useCart } from "@saleor/sdk";
@@ -53,15 +54,17 @@ const MainMenu: React.FC<MainMenuProps> = ({ demoMode }) => {
       items.reduce((prevVal, currVal) => prevVal + currVal.quantity, 0)) ||
     0;
 
-  const [activeDropdown, setActiveDropdown] = useState<string>(undefined);
+  const activeDropdown = undefined;
 
-  useEffect(() => {
-    if (activeDropdown) {
-      overlayContext.show(OverlayType.mainMenuNav, OverlayTheme.modal);
-    } else {
-      overlayContext.hide();
-    }
-  }, [activeDropdown]);
+  // const [activeDropdown, setActiveDropdown] = useState<string>(undefined);
+
+  // useEffect(() => {
+  //   if (activeDropdown) {
+  //     overlayContext.show(OverlayType.mainMenuNav, OverlayTheme.modal);
+  //   } else {
+  //     overlayContext.hide();
+  //   }
+  // }, [activeDropdown]);
 
   // const showDropdownHandler = (itemId: string, hasSubNavigation: boolean) => {
   //   if (hasSubNavigation) {

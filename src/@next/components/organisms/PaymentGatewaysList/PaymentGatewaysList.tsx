@@ -28,7 +28,7 @@ const PaymentGatewaysList: React.FC<IProps> = ({
   errors,
   onError,
 }: IProps) => {
-  console.info(paymentGateways);
+  // console.info(paymentGateways);
   return (
     <S.Wrapper>
       {paymentGateways.map(({ id, name, config }, index) => {
