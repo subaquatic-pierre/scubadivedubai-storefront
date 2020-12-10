@@ -2,7 +2,7 @@ import "./scss/index.scss";
 import * as React from "react";
 import LogoSmall from "../../images/logo-small.svg";
 import { SocialMediaIcon } from "..";
-import { CreditCardIcon } from "../../@next/components/atoms/CreditCardIcon";
+// import { CreditCardIcon } from "../../@next/components/atoms/CreditCardIcon";
 
 import { SOCIAL_MEDIA } from "../../core/config";
 

@@ -19,7 +19,7 @@ import {
 } from "..";
 import * as appPaths from "../../app/routes";
 import { maybe } from "../../core/utils";
-import NavDropdown from "./NavDropdown";
+// import NavDropdown from "./NavDropdown";
 import { TypedMainMenuQuery } from "./queries";
 
 import cartImg from "../../images/cart.svg";
@@ -63,17 +63,17 @@ const MainMenu: React.FC<MainMenuProps> = ({ demoMode }) => {
     }
   }, [activeDropdown]);
 
-  const showDropdownHandler = (itemId: string, hasSubNavigation: boolean) => {
-    if (hasSubNavigation) {
-      setActiveDropdown(itemId);
-    }
-  };
+  // const showDropdownHandler = (itemId: string, hasSubNavigation: boolean) => {
+  //   if (hasSubNavigation) {
+  //     setActiveDropdown(itemId);
+  //   }
+  // };
 
-  const hideDropdownHandler = () => {
-    if (activeDropdown) {
-      setActiveDropdown(undefined);
-    }
-  };
+  // const hideDropdownHandler = () => {
+  //   if (activeDropdown) {
+  //     setActiveDropdown(undefined);
+  //   }
+  // };
 
   return (
     <header

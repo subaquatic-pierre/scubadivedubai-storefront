@@ -14,7 +14,7 @@ import { MainMenu_shop_navigation_main_items } from "../MainMenu/gqlTypes/MainMe
 import { MainMenuSubItem } from "../MainMenu/gqlTypes/MainMenuSubItem";
 
 interface NavLinkProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
-  hasSubNavigation: boolean;
+  hasSubNavigation?: boolean;
   item:
     | MainMenu_shop_navigation_main_items
     | MainMenuSubItem

@@ -37,7 +37,7 @@ const buildUrlPrefix = item => {
   return `/category`;
 };
 
-export const extractBreadcrumbs = (category: Category_category) => {
+export const extractBreadcrumbs = (category: Category_category | any) => {
   const constructLink = item => ({
     link: [
       buildUrlPrefix(item),
