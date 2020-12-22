@@ -13,6 +13,10 @@
       overflow: hidden;
     }
 
+    &-action {
+      margin-top: $spacer * 2;
+    }
+
     @media (max-width: $small-screen) {
       align-items: center;
       display: flex;
@@ -35,7 +39,8 @@
     &__title {
       background-color: $white;
       display: inline-block;
-      transform: skew(45deg);
+      // transform: skew(45deg);
+      border-radius: 5px;
       padding: $spacer $spacer * 3;
       margin-bottom: $spacer / 2;
 
@@ -46,7 +51,7 @@
 
       h1 {
         display: inline-block;
-        transform: skew(-45deg);
+        // transform: skew(-45deg);
         font-weight: $bold-font-weight;
         text-transform: uppercase;
         color: $blue;
