@@ -1,8 +1,9 @@
 @import "../../../globalStyles/scss/variables.scss";
 
 .footer {
-  background-color: $gray-light;
+  background-color: $logo-blue;
   padding: $spacer * 3 0 $spacer * 2;
+  color: $white;
 
   .container {
     display: grid;
@@ -29,7 +30,7 @@
   }
 
   &__favicons {
-    border-top: 1px solid $gray-light;
+    // border-top: 1px solid $gray-light;
     margin-bottom: $spacer;
     display: flex;
     justify-content: center;
@@ -51,11 +52,11 @@
       p {
         margin-bottom: $spacer / 2;
         font-size: $small-font-size;
-        color: $gray-dark;
+        color: $white-off;
 
         a {
           text-decoration: none;
-          color: $gray-dark;
+          color: $white-off;
         }
       }
     }
@@ -69,7 +70,7 @@
 
         &::before {
           content: "";
-          background: rgb(87, 87, 87);
+          background: $white-off;
           position: absolute;
           top: 0;
           left: 0;

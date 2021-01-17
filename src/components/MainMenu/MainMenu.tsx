@@ -26,7 +26,7 @@ import { TypedMainMenuQuery } from "./queries";
 import cartImg from "../../images/cart.svg";
 import hamburgerHoverImg from "../../images/hamburger-hover.svg";
 import hamburgerImg from "../../images/hamburger.svg";
-import logoImg from "../../images/logo.svg";
+import logoImg from "../../images/logo_hor.png";
 import searchImg from "../../images/search.svg";
 import userImg from "../../images/user.svg";
 import {
@@ -238,7 +238,8 @@ const MainMenu: React.FC<MainMenuProps> = ({ demoMode }) => {
 
         <div className="main-menu__center">
           <Link to={appPaths.baseUrl}>
-            <ReactSVG path={logoImg} />
+            <img src={logoImg} alt="Logo" />
+            {/* <ReactSVG path={logoImg} /> */}
           </Link>
         </div>
 
@@ -335,6 +336,7 @@ const MainMenu: React.FC<MainMenuProps> = ({ demoMode }) => {
             <li
               data-test="menuSearchOverlayLink"
               className="main-menu__search"
+              style={{ marginRight: "10px" }}
               onClick={() =>
                 overlayContext.show(OverlayType.search, OverlayTheme.right)
               }

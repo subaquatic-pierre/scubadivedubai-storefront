@@ -1,6 +1,6 @@
 import "./scss/index.scss";
 import * as React from "react";
-import LogoSmall from "../../images/logo-small.svg";
+import Logo from "../../images/logo_vert.png";
 import { SocialMediaIcon } from "..";
 // import { CreditCardIcon } from "../../@next/components/atoms/CreditCardIcon";
 
@@ -12,7 +12,7 @@ const Footer: React.FC = () => (
   <footer className="footer" id="footer">
     <div className="container">
       <div className="footer__logo">
-        <img width="150px" src={LogoSmall} alt="logo" />
+        <img width="150px" src={Logo} alt="logo" />
         <div className="footer__favicons">
           {SOCIAL_MEDIA.map(medium => (
             <SocialMediaIcon medium={medium} key={medium.ariaLabel} />

@@ -49,7 +49,15 @@
 
     img {
       max-height: 3.5rem;
-      margin: 0.2rem 0 0 1rem;
+      margin-top: 0.2rem;
+      margin-left: 1rem;
+      width: 80%;
+
+      @media (max-width: $small-screen) {
+        max-height: 3.5rem;
+        margin: 0.8rem 0 0 1rem;
+        width: 80%;
+      }
     }
 
     &-link,
